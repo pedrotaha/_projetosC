@@ -569,7 +569,7 @@ public class JFNumeros extends javax.swing.JFrame {
             meio = (inicio + fim) / 2;
             mergeSalario(inicio, meio);
             mergeSalario(meio + 1, fim);
-            intercala(inicio, fim, meio);
+            intercalaSalario(inicio, fim, meio);
         }
     }
 
