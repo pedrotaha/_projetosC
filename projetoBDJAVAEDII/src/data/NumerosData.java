@@ -18,6 +18,9 @@ public class NumerosData {
             NumerosModel obj = new NumerosModel(rs.getInt("num"));
             dados.add(obj);
         }
+        c.getConexao().close();
+        ps.close();
+        rs.close();
         return dados;
     }
 
@@ -28,8 +31,12 @@ public class NumerosData {
         ps.setInt(1, obj.get(pos).getVetor());
         ps.setInt(2, (pos + 1));
         if (ps.executeUpdate() > 0) {
+            ps.close();
+            c.getConexao().close();
             return true;
         } else {
+            ps.close();
+            c.getConexao().close();
             throw new Exception("Não foi possível atualizar.");
         }
     }
@@ -48,7 +55,9 @@ public class NumerosData {
             PreparedStatement ps2 = c.getConexao().prepareStatement(sql2);
             ps2.setInt(1, objVet.getVetor());
             if (ps2.executeUpdate() > 0) {
-
+                ps1.close();
+                ps2.close();
+                c.getConexao().close();
             } else {
                 throw new Exception("Não foi possível atualizar.");
             }

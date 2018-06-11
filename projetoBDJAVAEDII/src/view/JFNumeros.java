@@ -217,7 +217,11 @@ public class JFNumeros extends javax.swing.JFrame {
 
     private void jbBubbleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBubbleActionPerformed
         if (jcbColunas.getSelectedIndex() == 0) {
+            long startTime = System.nanoTime();
             bubbleSort();
+            long stopTime = System.nanoTime();
+            System.out.println(stopTime - startTime);
+            atualizarVetorBanco();
             mostrar();
         } else {
             if (jcbColunas.getSelectedIndex() == 1) {
@@ -234,7 +238,11 @@ public class JFNumeros extends javax.swing.JFrame {
 
     private void jbInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInsertActionPerformed
         if (jcbColunas.getSelectedIndex() == 0) {
+            long startTime = System.nanoTime();
             insertionSort();
+            long stopTime = System.nanoTime();
+            System.out.println(stopTime - startTime);
+            atualizarVetorBanco();
             mostrar();
         } else {
             if (jcbColunas.getSelectedIndex() == 1) {
@@ -251,7 +259,11 @@ public class JFNumeros extends javax.swing.JFrame {
 
     private void jbSelectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSelectionActionPerformed
         if (jcbColunas.getSelectedIndex() == 0) {
+            long startTime = System.nanoTime();
             selectionSort();
+            long stopTime = System.nanoTime();
+            System.out.println(stopTime - startTime);
+            atualizarVetorBanco();
             mostrar();
         } else {
             if (jcbColunas.getSelectedIndex() == 1) {
@@ -268,7 +280,10 @@ public class JFNumeros extends javax.swing.JFrame {
 
     private void jbQuickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuickActionPerformed
         if (jcbColunas.getSelectedIndex() == 0) {
+            long startTime = System.nanoTime();
             quicksort(0, numeros.size() - 1);
+            long stopTime = System.nanoTime();
+            System.out.println(stopTime - startTime);
             atualizarVetorBanco();
             mostrar();
         } else {
@@ -287,7 +302,10 @@ public class JFNumeros extends javax.swing.JFrame {
 
     private void jbMergeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMergeActionPerformed
         if (jcbColunas.getSelectedIndex() == 0) {
+            long startTime = System.nanoTime();
             merge(0, numeros.size() - 1);
+            long stopTime = System.nanoTime();
+            System.out.println(stopTime - startTime);
             atualizarVetorBanco();
             mostrar();
         } else {
@@ -394,7 +412,7 @@ public class JFNumeros extends javax.swing.JFrame {
                 }
             }
         }
-        atualizarVetorBanco();
+        //atualizarVetorBanco();
     }
 
     void bubbleString() {
@@ -433,7 +451,7 @@ public class JFNumeros extends javax.swing.JFrame {
             }
             numeros.get(j + 1).setVetor(aux);
         }
-        atualizarVetorBanco();
+        //atualizarVetorBanco();
     }
 
     void insertionString() {
@@ -477,7 +495,7 @@ public class JFNumeros extends javax.swing.JFrame {
                 numeros.get(min).setVetor(aux);
             }
         }
-        atualizarVetorBanco();
+        //atualizarVetorBanco();
     }
 
     void selectionString() {
